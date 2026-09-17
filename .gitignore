@@ -1,0 +1,4 @@
+node_modules/
+*.log
+# dist/ is committed on purpose: consumers install this repo as a git
+# dependency, and a committed build means no install-time build hooks.

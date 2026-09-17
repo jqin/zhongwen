@@ -1,0 +1,55 @@
+{
+  "name": "@jqin/zhongwen",
+  "version": "0.1.0",
+  "description": "Shared Chinese-language core: CEDICT dictionary, segmentation, pinyin, HSK levels, spaced repetition, and TTS.",
+  "license": "MIT",
+  "repository": "github:jqin/zhongwen",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tts-web": {
+      "types": "./dist/tts-web.d.ts",
+      "import": "./dist/tts-web.js",
+      "require": "./dist/tts-web.cjs"
+    },
+    "./tts-expo": {
+      "types": "./dist/tts-expo.d.ts",
+      "import": "./dist/tts-expo.js",
+      "require": "./dist/tts-expo.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "bin"
+  ],
+  "bin": {
+    "zhongwen-build-cedict": "./bin/build-cedict.mjs",
+    "zhongwen-build-hsk": "./bin/build-hsk.mjs"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "expo-speech": "*"
+  },
+  "peerDependenciesMeta": {
+    "expo-speech": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
